@@ -1,9 +1,9 @@
+import intersection = require('lodash/intersection');
 import {ClassInstanceMemberTypes, Decorator} from 'ts-simple-ast';
 import {LazyGetter} from 'typescript-lazy-get-decorator';
 import {getStringNameMapper} from './inc/getStringNameMapper';
 import {triggersDestroy, triggersInit} from './inc/triggering-decorators';
 import {SrcClass} from './SrcClass';
-import intersection = require('lodash/intersection');
 
 export class ClassProp {
   public constructor(public readonly clazz: SrcClass, private readonly prop: ClassInstanceMemberTypes) {

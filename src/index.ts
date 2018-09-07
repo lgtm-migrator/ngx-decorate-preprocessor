@@ -41,5 +41,3 @@ function doFormat(contents: string, tmpPath: string, indentSize: number): string
 
   return txt;
 }
-
-

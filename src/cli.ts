@@ -19,8 +19,8 @@ yargs.scriptName('ngx-decorate-preprocess')
   .option('indent', {
     alias: 'i',
     default: StaticConf.INDENT,
-    number: true,
-    global: true
+    global: true,
+    number: true
   })
   .demandCommand(1)
   .commandDir(join(__dirname, 'cli-commands'), {extensions: [ext]})
