@@ -1,6 +1,7 @@
 import * as tmp from 'tmp';
 import {default as Project} from 'ts-simple-ast';
 import {StaticConf} from './inc/StaticConf';
+import {trimMapper} from './inc/trimMapper';
 import {SrcFile} from './SrcFile';
 
 tmp.setGracefulCleanup();
@@ -36,7 +37,10 @@ function doFormat(contents: string, tmpPath: string, indentSize: number): string
   if (txt !== contents) {
     srcFile.formatText({indentSize, ensureNewLineAtEndOfFile: true});
 
-    txt = srcFile.getFullText();
+    txt = srcFile.getFullText().trim()
+      .split(/\n/g)
+      .map(trimMapper)
+      .join('\n') + '\n';
   }
 
   return txt;
