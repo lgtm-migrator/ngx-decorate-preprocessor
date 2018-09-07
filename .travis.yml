@@ -13,8 +13,9 @@ before_install:
 #- &prepKey if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
 - greenkeeper-lockfile-update
 install: yarn install --check-files --ignore-engines
-script: yarn run typecheck
+script: yarn run tslint && yarn test --forbid-pending --forbid-pending
 after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
+after_success: cat ./coverage/lcov.info | coveralls
 
 #stages:
 #- Test

@@ -1,5 +1,6 @@
 Proper release pending.
 
+[![Coverage Status](https://coveralls.io/repos/github/Alorel/ngx-decorate-preprocessor/badge.svg?branch=master)](https://coveralls.io/github/Alorel/ngx-decorate-preprocessor?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Alorel/ngx-decorate-preprocessor.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.com/Alorel/ngx-decorate-preprocessor.svg?branch=master)](https://travis-ci.com/Alorel/ngx-decorate-preprocessor)
 
