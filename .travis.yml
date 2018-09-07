@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+- lts/carbon
+- stable
+
+sudo: false
+
+cache:
+  yarn: true
+
+before_install:
+- npm i -g yarn greenkeeper-lockfile
+#- &prepKey if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
+- greenkeeper-lockfile-update
+install: yarn install --check-files --ignore-engines
+script: yarn run typecheck
+after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
+
+#stages:
+#- Test
+#- name: Release
+#  if: branch = master AND type = push AND (NOT tag IS present)
+#
+#jobs:
+#  include:
+#  - stage: Release
+#    node_js: stable
+#    before_install:
+#    - npm i -g yarn
+#    - *prepKey
+#    before_script:
+#    - yarn run build
+#    - node dist/alo copy-files
+#    - node dist/alo clean-dist
+#    - node dist/alo clean-pkg-json
+#    script: semantic-release
+#    after_success: []
+#    after_script: []
