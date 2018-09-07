@@ -1,6 +1,6 @@
 {
   "name": "ngx-decorate-preprocessor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "bin": {
     "ngx-decorate-preprocess": "cli.js"
   },
