@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.0.0...1.0.1) (2018-09-07)
+
+
+### Bug Fixes
+
+* There should no longer be trailing whitespaces ([50f607e](https://github.com/Alorel/ngx-decorate-preprocessor/commit/50f607e))
+
 # 1.0.0 (2018-09-07)
 
 
