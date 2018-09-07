@@ -17,12 +17,12 @@ function mkTmpFile(): Promise<string> {
   });
 }
 
-export function formatAsync(contents: string, indentSize = StaticConf.INDENT): Promise<string> {
+export function formatAsync(contents: string, indentSize: number = StaticConf.INDENT): Promise<string> {
   return mkTmpFile()
     .then(tmpPath => doFormat(contents, tmpPath, indentSize));
 }
 
-export function formatSync(contents: string, indentSize = StaticConf.INDENT): string {
+export function formatSync(contents: string, indentSize: number = StaticConf.INDENT): string {
   return doFormat(contents, tmp.fileSync().name, indentSize);
 }
 
