@@ -6,7 +6,7 @@ import {StaticConf} from './inc/StaticConf';
 
 const ext = /\.js$/.test(__filename) ? 'js' : 'ts';
 
-yargs.scriptName('ngx-decorate-preprocess')
+const argv = yargs.scriptName('ngx-decorate-preprocess')
   .wrap(yargs.terminalWidth())
   .help()
   .alias('v', 'version')
@@ -19,9 +19,26 @@ yargs.scriptName('ngx-decorate-preprocess')
   .option('indent', {
     alias: 'i',
     default: StaticConf.INDENT,
-    number: true,
-    global: true
+    global: true,
+    number: true
   })
   .demandCommand(1)
-  .commandDir(join(__dirname, 'cli-commands'), {extensions: [ext]})
-  .parse();
+  .commandDir(join(__dirname, 'cli-commands'), {extensions: [ext]});
+
+/** @internal */
+export function runCmd(args: string | string[]): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    argv.parse(args, {}, (err, _argv, output) => {
+      if (err) {
+        process.stderr.write(output);
+        reject(err);
+      } else {
+        resolve(output);
+      }
+    });
+  });
+}
+
+if (!process.env.RUNNING_TESTS) {
+  argv.global('config').parse();
+}

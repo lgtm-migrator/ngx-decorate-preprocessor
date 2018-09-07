@@ -12,7 +12,9 @@ const cmd: CommandModule = {
     const files = flatGlob(c.globs);
 
     if (!files.length) {
-      return warn('No files to process.');
+      warn('No files to process.');
+
+      return;
     }
 
     let errored = false;

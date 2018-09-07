@@ -10,29 +10,29 @@ cache:
 
 before_install:
 - npm i -g yarn greenkeeper-lockfile
-#- &prepKey if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
+- &prepKey if [[ $GH_TOKEN ]]; then ./prepare-gpg-key.sh; fi;
 - greenkeeper-lockfile-update
 install: yarn install --check-files --ignore-engines
-script: yarn run typecheck
+script:
+  - yarn run tslint
+  - if [[ $GH_TOKEN ]]; then yarn run build && semantic-release --dry-run --branch $TRAVIS_BRANCH; else yarn run build --noEmit; fi;
+  - yarn test --forbid-pending --forbid-pending
 after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
+after_success: cat ./coverage/lcov.info | coveralls
 
-#stages:
-#- Test
-#- name: Release
-#  if: branch = master AND type = push AND (NOT tag IS present)
-#
-#jobs:
-#  include:
-#  - stage: Release
-#    node_js: stable
-#    before_install:
-#    - npm i -g yarn
-#    - *prepKey
-#    before_script:
-#    - yarn run build
-#    - node dist/alo copy-files
-#    - node dist/alo clean-dist
-#    - node dist/alo clean-pkg-json
-#    script: semantic-release
-#    after_success: []
-#    after_script: []
+stages:
+- Test
+- name: Release
+  if: branch = master AND type = push AND (NOT tag IS present)
+
+jobs:
+  include:
+  - stage: Release
+    node_js: stable
+    before_install:
+    - npm i -g yarn
+    - *prepKey
+    before_script: yarn run build
+    script: semantic-release
+    after_success: []
+    after_script: []

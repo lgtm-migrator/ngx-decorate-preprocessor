@@ -1,0 +1,30 @@
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { NgxDecorate, SubscribeTo } from 'ngx-decorate';
+import { timer } from 'rxjs';
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  @SubscribeTo('ticker$', { cdrProp: 'cdr' })
+  public ticker$ = timer(0, 1000);
+
+  public ticks: number;
+
+  title = 'test-ngx-decorate';
+
+  public constructor(public readonly cdr: ChangeDetectorRef) {
+
+  }
+
+  public get bar() {
+
+  }
+
+  public foo() {
+
+  }
+}

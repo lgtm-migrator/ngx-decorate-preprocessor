@@ -1,0 +1,13 @@
+global:
+  dist-dirs: &distDirs dist
+
+clean-pkg-json:
+  sort-scripts: true
+
+copy-files:
+  from:
+  - package.json
+  - LICENSE
+  - CHANGELOG.md
+  - README.md
+  to: *distDirs

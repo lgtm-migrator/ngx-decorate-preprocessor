@@ -9,7 +9,7 @@ export class SrcFile {
   @LazyGetter()
   public get classes(): SrcClass[] {
     return this.src.getClasses()
-      .map(this.relevantClassMapper, this);
+      .map(this.relevantClassMapper, this); //tslint:disable-line:no-unbound-method
   }
 
   public get importDeclarations(): ImportDeclaration[] {

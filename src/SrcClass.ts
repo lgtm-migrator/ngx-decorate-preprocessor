@@ -49,7 +49,7 @@ export class SrcClass {
   @LazyGetter()
   private get props(): ClassProp[] {
     return this.clazz.getInstanceProperties()
-      .map(this.propMapper, this);
+      .map(this.propMapper, this); //tslint:disable-line:no-unbound-method
   }
 
   public process(): void {
@@ -85,7 +85,7 @@ export class SrcClass {
             this.file.src.addImportDeclaration({
               moduleSpecifier: '@angular/core',
               namedImports: [interfaceName]
-            })
+            });
           } else {
             dec.addNamedImport(interfaceName);
           }
@@ -93,7 +93,6 @@ export class SrcClass {
       }
     }
   }
-
 
   private processDestroy(): void {
     if (this.triggersDestroy) {
