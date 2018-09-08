@@ -1,10 +1,20 @@
 #!/usr/bin/env node
 
-import {join} from 'path';
+import {readdirSync} from 'fs';
+import {basename, join} from 'path';
 import * as yargs from 'yargs';
+import {checkCommand} from './inc/checkCommand';
 import {StaticConf} from './inc/StaticConf';
 
 const ext = /\.js$/.test(__filename) ? 'js' : 'ts';
+
+const commandsNames: string[] = (() => {
+  const reg = new RegExp(`\.${ext}$`);
+
+  return readdirSync(join(__dirname, 'cli-commands'), 'utf8')
+    .filter(f => reg.test(f))
+    .map(f => basename(f, `.${ext}`));
+})();
 
 const argv = yargs.scriptName('ngx-decorate-preprocess')
   .wrap(yargs.terminalWidth())
@@ -44,7 +54,8 @@ const argv = yargs.scriptName('ngx-decorate-preprocess')
     description: 'Set the logging level to "verbose" which outputs everything'
   })
   .demandCommand(1)
-  .commandDir(join(__dirname, 'cli-commands'), {extensions: [ext]});
+  .commandDir(join(__dirname, 'cli-commands'), {extensions: [ext]})
+  .check(checkCommand(commandsNames));
 
 /** @internal */
 export function runCmd(args: string | string[]): Promise<string> {
