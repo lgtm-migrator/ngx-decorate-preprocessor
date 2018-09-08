@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import {CommandModule} from 'yargs';
 import {CommonCLIOpts} from '../inc/CommonCLIOpts';
 import {flatGlob} from '../inc/flatGlob';
-import {err, info, success, warn} from '../inc/logger';
+import {Logger} from '../inc/logger';
 import {formatSync} from '../index';
 
 const cmd: CommandModule = {
@@ -10,9 +10,10 @@ const cmd: CommandModule = {
   describe: 'Format the given globs',
   handler(c: CommonCLIOpts) {
     const files = flatGlob(c.globs);
+    const log = Logger.fromOpts(c);
 
     if (!files.length) {
-      warn('No files to process.');
+      log.warn('No files to process.');
 
       return;
     }
@@ -23,13 +24,13 @@ const cmd: CommandModule = {
         const formatted = formatSync(inContents, c.indent);
         if (inContents !== formatted) {
           fs.writeFileSync(f, formatted);
-          success(`Formatted: ${f}`);
+          log.success(`Formatted: ${f}`);
         } else {
-          info(`Skipped: ${f}`);
+          log.info(`Skipped: ${f}`);
         }
       }
     } catch (e) {
-      err(e.message);
+      log.err(e.message);
 
       throw e;
     }

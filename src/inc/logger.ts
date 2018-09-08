@@ -1,19 +1,52 @@
 import * as chalk$ from 'chalk';
+import {CommonCLIOpts} from './CommonCLIOpts';
 
 const chalk: chalk$.Chalk = chalk$['bgRed'] ? <any>chalk$ : (<any>chalk$).default;
 
-export function success(txt: string): void {
-  console.log(chalk.green(txt));
+export const enum LogLevel {
+  SILENT = 'silent',
+  QUIET = 'quiet',
+  VERBOSE = 'verbose'
 }
 
-export function warn(txt: string): void {
-  console.log(chalk.yellow(txt));
+function noop(): void {
+  // do nothing
 }
 
-export function err(txt: string): void {
-  console.error(chalk.red(txt));
-}
+export class Logger {
+  public constructor(lvl: LogLevel) {
+    switch (lvl) {
+      case LogLevel.QUIET:
+        this.info = noop;
+        this.success = noop;
+        break;
+      case LogLevel.SILENT:
+        this.info = noop;
+        this.success = noop;
+        this.warn = noop;
+        this.err = noop;
+    }
+  }
 
-export function info(txt: string): void {
-  console.log(chalk.cyan(txt));
+  public static fromOpts(o: Pick<CommonCLIOpts, 'quiet' | 'silent' | 'verbose'>) {
+    const ll: LogLevel = o.silent ? LogLevel.SILENT : o.verbose ? LogLevel.VERBOSE : LogLevel.QUIET;
+
+    return new Logger(ll);
+  }
+
+  public err(txt: string): void {
+    process.stderr.write(chalk.red(txt) + '\n');
+  }
+
+  public info(txt: string): void {
+    process.stdout.write(chalk.cyan(txt) + '\n');
+  }
+
+  public success(txt: string): void {
+    process.stdout.write(chalk.green(txt) + '\n');
+  }
+
+  public warn(txt: string): void {
+    process.stderr.write(chalk.yellow(txt) + '\n');
+  }
 }

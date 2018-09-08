@@ -24,6 +24,25 @@ const argv = yargs.scriptName('ngx-decorate-preprocess')
     global: true,
     number: true
   })
+  .option('quiet', {
+    alias: 'q',
+    boolean: true,
+    default: true,
+    description: 'Set the logging level to "quiet" which only outputs error and warning messages.',
+    global: true
+  })
+  .option('silent', {
+    alias: 's',
+    boolean: true,
+    default: false,
+    description: 'Set the logging level to "silent" which outputs nothing.'
+  })
+  .option('verbose', {
+    alias: 'e',
+    boolean: false,
+    default: false,
+    description: 'Set the logging level to "verbose" which outputs everything'
+  })
   .demandCommand(1)
   .commandDir(join(__dirname, 'cli-commands'), {extensions: [ext]});
 
