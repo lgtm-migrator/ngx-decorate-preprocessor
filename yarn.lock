@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@alorel-personal/build-tools@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@alorel-personal/build-tools/-/build-tools-3.0.1.tgz#d113caee56f003b0b7db9650b6a18580c8a4bd46"
+"@alorel-personal/build-tools@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@alorel-personal/build-tools/-/build-tools-3.1.0.tgz#48352dafa1f4c50104541e01703c6c85c84e756f"
   dependencies:
     delete-empty "^2.0.0"
     fs-extra "^7.0.0"
