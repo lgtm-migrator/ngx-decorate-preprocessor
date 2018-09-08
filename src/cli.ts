@@ -14,11 +14,13 @@ const argv = yargs.scriptName('ngx-decorate-preprocess')
     alias: 'g',
     array: true,
     demandOption: true,
+    description: 'Globs to process',
     global: true
   })
   .option('indent', {
     alias: 'i',
     default: StaticConf.INDENT,
+    description: 'Indentation level in your files',
     global: true,
     number: true
   })
