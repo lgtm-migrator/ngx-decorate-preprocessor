@@ -7,7 +7,7 @@ import {formatSync} from '../index';
 
 const cmd: CommandModule = {
   command: 'format',
-  describe: 'Format the given glob',
+  describe: 'Format the given globs',
   handler(c: CommonCLIOpts) {
     const files = flatGlob(c.globs);
 
