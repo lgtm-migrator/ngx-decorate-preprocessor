@@ -5,6 +5,7 @@ import * as fs from 'fs-extra';
 import {merge} from 'lodash';
 import {join} from 'path';
 import * as tmp from 'tmp';
+import {v4 as uuid} from 'uuid';
 import {formatAsync, formatSync} from '../src';
 import {runCmd} from '../src/cli';
 
@@ -110,6 +111,47 @@ describe('format', () => {
         it('', () => {
           expect(outContent).to.eq(fixRmDest);
         });
+      });
+    });
+
+    describe('Invalid command check', () => {
+      before('outPath', mkTmpFile);
+      before('write', () => writeOut(fixAddDest));
+
+      it('Valid command should exit with 0', (cb: any) => {
+        let err = false;
+        spawn('ts-node', ['src/cli.ts', 'test', '--globs', outPath])
+          .once('error', e => {
+            err = true;
+            cb(e);
+          })
+          .once('exit', code => {
+            if (!err) {
+              if (code === 0) {
+                cb();
+              } else {
+                cb(`Code ${code}`);
+              }
+            }
+          });
+      });
+
+      it('Invalid command should exit with non-zero', (cb: any) => {
+        let err = false;
+        spawn('ts-node', ['src/cli.ts', uuid(), '--globs', outPath])
+          .once('error', () => {
+            err = true;
+            cb();
+          })
+          .once('exit', code => {
+            if (!err) {
+              if (code === 0) {
+                cb('Edited with 0');
+              } else {
+                cb();
+              }
+            }
+          });
       });
     });
 
