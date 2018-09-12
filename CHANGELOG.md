@@ -1,3 +1,20 @@
+## [1.1.1](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.0...1.1.1) (2018-09-12)
+
+
+### Dependency updates
+
+* **package:** update lodash to version 4.17.11 ([0c62af0](https://github.com/Alorel/ngx-decorate-preprocessor/commit/0c62af0))
+
+
+### Maintenance
+
+* Update lockfile ([4a8dd4c](https://github.com/Alorel/ngx-decorate-preprocessor/commit/4a8dd4c))
+
+
+### Tests
+
+* Add tests for invalid command exit codes ([9984ae3](https://github.com/Alorel/ngx-decorate-preprocessor/commit/9984ae3))
+
 # [1.1.0](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.0.1...1.1.0) (2018-09-08)
 
 
