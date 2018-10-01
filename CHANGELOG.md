@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.3...1.1.4) (2018-10-01)
+
+
+### Dependency updates
+
+* **package:** update ts-simple-ast to version 16.0.1 ([e911efa](https://github.com/Alorel/ngx-decorate-preprocessor/commit/e911efa)), closes [#21](https://github.com/Alorel/ngx-decorate-preprocessor/issues/21)
+
 ## [1.1.3](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.2...1.1.3) (2018-09-23)
 
 
