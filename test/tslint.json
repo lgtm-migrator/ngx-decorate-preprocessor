@@ -1,6 +1,9 @@
 {
   "extends": "../tslint.json",
   "rules": {
-    "import-blacklist": false
+    "import-blacklist": false,
+    "no-identical-functions": false,
+    "no-big-function": false,
+    "no-duplicate-string": false
   }
 }
