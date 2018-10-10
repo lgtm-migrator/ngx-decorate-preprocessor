@@ -19,7 +19,7 @@
     "test": "cross-env RUNNING_TESTS=1 nyc mocha --opts ./mocha.opts",
     "test:watch": "npm run test -- --watch",
     "typecheck": "npm run build -- --noEmit",
-    "tslint": "tslint -s ./node_modules/custom-tslint-formatters/formatters -t grouped -p tsconfig.tslint.json",
+    "tslint": "alo tslint -p tsconfig.tslint.json",
     "tslint:fix": "npm run tslint -- --fix",
     "watch": "npm run build -- --watch"
   },
@@ -60,7 +60,6 @@
     "coveralls": "~3.0.2",
     "cross-env": "~5.2.0",
     "cross-spawn": "~6.0.5",
-    "custom-tslint-formatters": "~2.4.0",
     "fs-extra": "~7.0.0",
     "mocha": "~5.2.0",
     "nyc": "~13.0.1",
@@ -68,8 +67,7 @@
     "semantic-release": "~15.9.12",
     "source-map-support": "~0.5.9",
     "ts-node": "~7.0.1",
-    "tslint": "~5.11.0",
-    "typescript": "~3.0.3",
+    "typescript": "~3.1.0",
     "uuid": "~3.3.2"
   }
 }
