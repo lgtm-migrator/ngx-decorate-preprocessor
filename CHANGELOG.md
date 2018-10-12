@@ -1,3 +1,22 @@
+## [1.1.8](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.7...1.1.8) (2018-10-12)
+
+
+### Dependency updates
+
+* **package:** update ts-simple-ast to version 17.0.0 ([c3b255d](https://github.com/Alorel/ngx-decorate-preprocessor/commit/c3b255d))
+
+
+### Maintenance
+
+* Generate GitHub issue templates ([63c46ba](https://github.com/Alorel/ngx-decorate-preprocessor/commit/63c46ba))
+* Update chai ([4041c6e](https://github.com/Alorel/ngx-decorate-preprocessor/commit/4041c6e))
+* Use build-tools for linting ([63b274b](https://github.com/Alorel/ngx-decorate-preprocessor/commit/63b274b))
+
+
+### Refactoring
+
+* Refactor for new tslint rules ([5746b5d](https://github.com/Alorel/ngx-decorate-preprocessor/commit/5746b5d))
+
 ## [1.1.7](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.6...1.1.7) (2018-10-10)
 
 
