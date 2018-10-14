@@ -1,3 +1,11 @@
+## [1.1.10](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.9...1.1.10) (2018-10-14)
+
+
+### Maintenance
+
+* Set production dependencies to use caret version ranges ([62ad622](https://github.com/Alorel/ngx-decorate-preprocessor/commit/62ad622))
+* **package:** Remove extraneous [@types](https://github.com/types)/chalk dev dependency ([fcc40f8](https://github.com/Alorel/ngx-decorate-preprocessor/commit/fcc40f8))
+
 ## [1.1.9](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.8...1.1.9) (2018-10-14)
 
 
