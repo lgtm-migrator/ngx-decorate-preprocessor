@@ -46,7 +46,6 @@
     "@semantic-release/git": "~7.0.3",
     "@semantic-release/npm": "~5.0.4",
     "@types/chai": "~4.1.4",
-    "@types/chalk": "~2.2.0",
     "@types/cross-spawn": "~6.0.0",
     "@types/fs-extra": "~5.0.4",
     "@types/glob": "~7.1.0",
