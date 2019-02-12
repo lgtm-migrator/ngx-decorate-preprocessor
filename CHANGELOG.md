@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.10...1.1.11) (2019-02-12)
+
+
+### Dependency updates
+
+* **package:** update yargs to version 13.1.0 ([e8313dd](https://github.com/Alorel/ngx-decorate-preprocessor/commit/e8313dd))
+
 ## [1.1.10](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.9...1.1.10) (2018-10-14)
 
 
