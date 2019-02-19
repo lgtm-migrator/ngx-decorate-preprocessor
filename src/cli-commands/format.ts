@@ -5,10 +5,10 @@ import {flatGlob} from '../inc/flatGlob';
 import {Logger} from '../inc/logger';
 import {formatSync} from '../index';
 
-const cmd: CommandModule = {
+const cmd: CommandModule<{}, CommonCLIOpts> = {
   command: 'format',
   describe: 'Format the given globs',
-  handler(c: CommonCLIOpts) {
+  handler(c) {
     const files = flatGlob(c.globs);
     const log = Logger.fromOpts(c);
 

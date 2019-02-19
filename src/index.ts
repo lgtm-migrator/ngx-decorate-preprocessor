@@ -1,5 +1,5 @@
 import * as tmp from 'tmp';
-import {default as Project} from 'ts-simple-ast';
+import {default as Project} from 'ts-morph';
 import {StaticConf} from './inc/StaticConf';
 import {trimMapper} from './inc/trimMapper';
 import {SrcFile} from './SrcFile';

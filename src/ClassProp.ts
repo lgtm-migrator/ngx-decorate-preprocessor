@@ -1,5 +1,5 @@
 import intersection = require('lodash/intersection');
-import {ClassInstanceMemberTypes, Decorator} from 'ts-simple-ast';
+import {ClassInstanceMemberTypes, Decorator} from 'ts-morph';
 import {LazyGetter} from 'typescript-lazy-get-decorator';
 import {getStringNameMapper} from './inc/getStringNameMapper';
 import {triggersDestroy, triggersInit} from './inc/triggering-decorators';
