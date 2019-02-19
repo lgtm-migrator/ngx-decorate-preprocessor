@@ -3,9 +3,10 @@ import {
   ClassInstancePropertyTypes,
   ExpressionWithTypeArguments,
   JSDoc,
+  JSDocTag,
   MethodDeclaration,
   Scope
-} from 'ts-simple-ast';
+} from 'ts-morph';
 import {LazyGetter} from 'typescript-lazy-get-decorator';
 import {ClassProp} from './ClassProp';
 import {triggersAnyFilter, triggersDestroyFilter, triggersInitFilter} from './inc/triggerFilters';
@@ -145,8 +146,8 @@ function isNgxDecorateJsdoc(d: JSDoc): boolean {
   return d.getTags().some(nameIsNgxAutoGenerateFilter);
 }
 
-function nameIsNgxAutoGenerateFilter(t: { getName(): string }): boolean {
-  return t.getName() === 'NgxDecorateAutoGenerate';
+function nameIsNgxAutoGenerateFilter(t: JSDocTag): boolean {
+  return t.getTagName() === 'NgxDecorateAutoGenerate';
 }
 
 const docString = [

@@ -1,4 +1,4 @@
-import {ClassDeclaration, ImportDeclaration, ImportSpecifier, SourceFile} from 'ts-simple-ast';
+import {ClassDeclaration, ImportDeclaration, ImportSpecifier, SourceFile} from 'ts-morph';
 import {LazyGetter} from 'typescript-lazy-get-decorator';
 import {SrcClass} from './SrcClass';
 
@@ -16,14 +16,6 @@ export class SrcFile {
     return this.src.getImportDeclarations();
   }
 
-  public importsFromModule(name: string): ImportDeclaration | void {
-    for (const dec of this.importDeclarations) {
-      if (dec.getModuleSpecifierValue() === name) {
-        return dec;
-      }
-    }
-  }
-
   public imports(item: string, moduleName: string): ImportSpecifier | void {
     for (const dec of this.importDeclarations) {
       if (dec.getModuleSpecifierValue() === moduleName) {
@@ -35,6 +27,14 @@ export class SrcFile {
       }
     }
 
+  }
+
+  public importsFromModule(name: string): ImportDeclaration | void {
+    for (const dec of this.importDeclarations) {
+      if (dec.getModuleSpecifierValue() === name) {
+        return dec;
+      }
+    }
   }
 
   public processClasses(): void {
