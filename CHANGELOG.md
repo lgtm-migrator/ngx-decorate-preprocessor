@@ -1,3 +1,10 @@
+## [1.1.12](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.11...1.1.12) (2019-02-19)
+
+
+### Dependency updates
+
+* **package:** update ts-morph to version 1.0.0 ([c8cde23](https://github.com/Alorel/ngx-decorate-preprocessor/commit/c8cde23))
+
 ## [1.1.11](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.10...1.1.11) (2019-02-12)
 
 
