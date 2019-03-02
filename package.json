@@ -57,7 +57,7 @@
     "@types/uuid": "~3.4.4",
     "@types/yargs": "~12.0.0",
     "chai": "~4.2.0",
-    "coveralls": "~3.0.2",
+    "coveralls": "~3.0.3",
     "cross-env": "~5.2.0",
     "cross-spawn": "~6.0.5",
     "fs-extra": "~7.0.0",
