@@ -1,5 +1,5 @@
+import {LazyGetter} from 'lazy-get-decorator';
 import {ClassDeclaration, ImportDeclaration, ImportSpecifier, SourceFile} from 'ts-morph';
-import {LazyGetter} from 'typescript-lazy-get-decorator';
 import {SrcClass} from './SrcClass';
 
 export class SrcFile {

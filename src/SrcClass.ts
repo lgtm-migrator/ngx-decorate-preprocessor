@@ -1,3 +1,4 @@
+import {LazyGetter} from 'lazy-get-decorator';
 import {
   ClassDeclaration,
   ClassInstancePropertyTypes,
@@ -7,7 +8,6 @@ import {
   MethodDeclaration,
   Scope
 } from 'ts-morph';
-import {LazyGetter} from 'typescript-lazy-get-decorator';
 import {ClassProp} from './ClassProp';
 import {triggersAnyFilter, triggersDestroyFilter, triggersInitFilter} from './inc/triggerFilters';
 import {SrcFile} from './SrcFile';
