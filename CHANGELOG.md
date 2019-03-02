@@ -1,3 +1,5 @@
+## [1.1.13](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.12...1.1.13) (2019-03-02)
+
 ## [1.1.12](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.11...1.1.12) (2019-02-19)
 
 
