@@ -1,3 +1,10 @@
+## [1.1.14](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.13...1.1.14) (2019-03-26)
+
+
+### Dependency updates
+
+* **package:** update tmp to version 0.1.0 ([f0bbffb](https://github.com/Alorel/ngx-decorate-preprocessor/commit/f0bbffb))
+
 ## [1.1.13](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.12...1.1.13) (2019-03-02)
 
 ## [1.1.12](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.11...1.1.12) (2019-02-19)
