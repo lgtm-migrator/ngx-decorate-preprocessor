@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-- lts/dubnium
-- lts/carbon
-- stable
+  - lts/dubnium
+  - stable
 
 sudo: false
 
@@ -10,8 +9,8 @@ cache:
   yarn: true
 
 before_install:
-- npm i -g yarn greenkeeper-lockfile
-- greenkeeper-lockfile-update
+  - npm i -g yarn greenkeeper-lockfile
+  - greenkeeper-lockfile-update
 install: yarn install --check-files --ignore-engines
 script:
   - yarn run tslint
@@ -21,16 +20,16 @@ after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
 after_success: cat ./coverage/lcov.info | coveralls
 
 stages:
-- Test
-- name: Release
-  if: branch = master AND type = push AND (NOT tag IS present)
+  - Test
+  - name: Release
+    if: branch = master AND type = push AND (NOT tag IS present)
 
 jobs:
   include:
-  - stage: Release
-    node_js: stable
-    before_install: npm i -g yarn
-    before_script: yarn run build
-    script: semantic-release
-    after_success: []
-    after_script: []
+    - stage: Release
+      node_js: stable
+      before_install: npm i -g yarn
+      before_script: yarn run build
+      script: semantic-release
+      after_success: []
+      after_script: []
