@@ -1,3 +1,16 @@
+## [1.1.15](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.14...1.1.15) (2019-07-15)
+
+
+### Dependency updates
+
+* **package:** update lodash to version 4.17.14 ([2cd2f8a](https://github.com/Alorel/ngx-decorate-preprocessor/commit/2cd2f8a))
+
+
+### Maintenance
+
+* Ignore ts-morph updates ([28c5458](https://github.com/Alorel/ngx-decorate-preprocessor/commit/28c5458))
+* **deps:** bump fstream from 1.0.11 to 1.0.12 ([f45e4e0](https://github.com/Alorel/ngx-decorate-preprocessor/commit/f45e4e0))
+
 ## [1.1.14](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.13...1.1.14) (2019-03-26)
 
 
