@@ -1,3 +1,15 @@
+## [1.1.16](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.15...1.1.16) (2019-08-28)
+
+
+### Dependency updates
+
+* **package:** update yargs to version 14.0.0 ([3a52674](https://github.com/Alorel/ngx-decorate-preprocessor/commit/3a52674))
+
+
+### Maintenance
+
+* Disabled completed-docs tslint rule as this package will get discontinued with the next iteration of ngx-decorate ([b624fa1](https://github.com/Alorel/ngx-decorate-preprocessor/commit/b624fa1))
+
 ## [1.1.15](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.14...1.1.15) (2019-07-15)
 
 
