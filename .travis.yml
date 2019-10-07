@@ -5,6 +5,10 @@ node_js:
 
 sudo: false
 
+env:
+  global:
+    - COVERALLS_PARALLEL=true
+
 cache:
   yarn: true
 
@@ -33,3 +37,6 @@ jobs:
       script: semantic-release
       after_success: []
       after_script: []
+
+notifications:
+  webhooks: https://coveralls.io/webhook
