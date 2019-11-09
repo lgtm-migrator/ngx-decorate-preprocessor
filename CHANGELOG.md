@@ -1,3 +1,10 @@
+## [1.1.17](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.16...1.1.17) (2019-11-09)
+
+
+### Dependency updates
+
+* **package:** update chalk to version 3.0.0 ([7246d7f](https://github.com/Alorel/ngx-decorate-preprocessor/commit/7246d7f))
+
 ## [1.1.16](https://github.com/Alorel/ngx-decorate-preprocessor/compare/1.1.15...1.1.16) (2019-08-28)
 
 
