@@ -1,8 +1,8 @@
 ## Preprocess files for [ngx-decorate](https://www.npmjs.com/package/ngx-decorate#important-aot-compilation-notice).
 
-[![Coverage Status](https://coveralls.io/repos/github/Alorel/ngx-decorate-preprocessor/badge.svg?branch=1.1.17)](https://coveralls.io/github/Alorel/ngx-decorate-preprocessor?branch=1.1.17)
+[![Coverage Status](https://coveralls.io/repos/github/Alorel/ngx-decorate-preprocessor/badge.svg?branch=1.1.18)](https://coveralls.io/github/Alorel/ngx-decorate-preprocessor?branch=1.1.18)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Alorel/ngx-decorate-preprocessor.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.com/Alorel/ngx-decorate-preprocessor.svg?branch=1.1.17)](https://travis-ci.com/Alorel/ngx-decorate-preprocessor)
+[![Build Status](https://travis-ci.com/Alorel/ngx-decorate-preprocessor.svg?branch=1.1.18)](https://travis-ci.com/Alorel/ngx-decorate-preprocessor)
 
 
 Installation:
